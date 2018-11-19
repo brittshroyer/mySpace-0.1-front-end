@@ -15,7 +15,7 @@ class Login extends Component {
           isAuthenticated() ? (
             <Redirect to={{pathname:'/users'}} />
           ) : (
-            <div>
+            <div className='text-center w-100 mt-5'>
               <h4>You are logged out</h4>
               <button className="btn btn-primary" onClick={() => this.login()}>Log In</button>
             </div>
