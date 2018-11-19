@@ -21,7 +21,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://127.0.0.1:3001",
+  "proxy": "https://https://ancient-woodland-38972.herokuapp.com/",
   "eslintConfig": {
     "extends": "react-app"
   },
