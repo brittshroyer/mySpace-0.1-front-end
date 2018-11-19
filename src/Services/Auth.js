@@ -6,7 +6,7 @@ export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: 'brittshroyer.auth0.com',
     clientID: 'mLTG75qv2vnwgst1rFh6i6R6pY8Lq15J',
-    redirectUri: 'https://ancient-woodland-38972.herokuapp.com/loading',
+    redirectUri: 'https://rocky-cliffs-93491.herokuapp.com/loading',
     responseType: 'token id_token',
     scope: 'openid profile email'
   });
