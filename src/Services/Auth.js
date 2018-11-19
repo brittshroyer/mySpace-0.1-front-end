@@ -6,7 +6,7 @@ export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: 'brittshroyer.auth0.com',
     clientID: 'mLTG75qv2vnwgst1rFh6i6R6pY8Lq15J',
-    redirectUri: 'http://localhost:3000/callback',
+    redirectUri: 'http://localhost:3000/loading',
     responseType: 'token id_token',
     scope: 'openid profile email'
   });
@@ -30,7 +30,7 @@ export default class Auth {
         this.setSession(authResult);
         history.replace('/');
       } else if (err) {
-        history.replace('/');
+        history.replace('/login');
         console.log(err);
       }
     });
@@ -39,13 +39,18 @@ export default class Auth {
   getAccessToken() {
     const accessToken = localStorage.getItem('access_token');
     if (!accessToken) {
-      throw new Error('No Access Token found');
+      console.log('no token');
+      // throw new Error('No Access Token found');
+      return this.logout();
     }
     return accessToken;
   }
 
   getProfile(cb) {
     let accessToken = this.getAccessToken();
+    if (!accessToken) {
+      return history.replace('/login');
+    }
     this.auth0.client.userInfo(accessToken, (err, profile) => {
       if (profile) {
         this.userProfile = profile;

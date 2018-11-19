@@ -3,8 +3,8 @@ import { Router, Route, Switch } from "react-router-dom";
 import history from './history';
 import App from './App';
 import Auth from './Services/Auth';
-import Callback from './Components/Callback';
-// import Home from './Components/Home';
+import Loading from './Components/Loading';
+import User from './Components/User';
 import Error from './Components/Error';
 import Login from './Components/Login';
 import Users from './Components/Users';
@@ -17,23 +17,16 @@ const handleAuthentication = ({location}) => {
   }
 };
 
-
-// const index = () => <h2>Home</h2>;
-// const create = () => <h2>Create Profile</h2>;
-// const myProfile = () => <h2>My Profile</h2>;
-// const users = () => <h2>Users</h2>;
-// const logout = () => <h2>Logout</h2>;
-
 export const AppRouter = () => (
   <Router history={history}>
     <Switch>
-
       <Route path="/" exact render={(props) => <App auth={auth} {...props} />} />
       <Route path="/login" render={(props) => <Login auth={auth} {...props} /> } />
-      <Route path="/users" render={(props) => <Users auth={auth} {...props} /> } />
-      <Route path="/callback" render={(props) => {
+      <Route path="/users" exact render={(props) => <Users auth={auth} {...props} /> } />
+      <Route path="/users/:id" render={(props) => <User auth={auth} {...props} /> } />
+      <Route path="/loading" render={(props) => {
         handleAuthentication(props);
-        return <Callback {...props} />
+        return <Loading {...props} />
       }}/>
       <Route render={() => <Error /> }/>
     </Switch>

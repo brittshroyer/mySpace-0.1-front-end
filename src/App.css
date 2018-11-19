@@ -1,3 +1,7 @@
+body {
+  background: #7BB5E8;
+}
+
 .App {
   text-align: center;
 }
@@ -6,6 +10,46 @@
   height: 35px;
 }
 
+textarea.form-control {
+  margin: 10px;
+  width: 95%;
+}
+
+table {
+  width: 100%;
+
+
+}
+
+.prof-pic img {
+  max-height: 100px;
+  max-width: 100px;
+}
+
+.table-img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+img {
+  max-height: 400px;
+  max-width: 600px;
+}
+
+.users-title {
+  font-size: 50px;
+  margin: 70px;
+}
+
+thead td {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
+td {
+  font-size: 20px;
+}
 .App-header {
   padding: 10px 15px;
   background-color: #282c34;
@@ -20,6 +64,36 @@
 .App-link {
   color: #61dafb;
 }
+
+.modal-main {
+  height: 300px;
+  width: 400px;
+  background: black;
+  z-index: 90000000;
+  position: absolute;
+  margin: 0 auto;
+
+}
+
+.main-section {
+  min-height: 600px;
+}
+
+.about-section {
+  min-height: 350px;
+}
+
+p.pointer {
+  cursor: pointer;
+}
+
+/* .custom-modal {
+  position: absolute;
+  z-index: 5000000;
+  background: black;
+  height: 300px;
+  width: 400px;
+} */
 
 @keyframes App-logo-spin {
   from {
